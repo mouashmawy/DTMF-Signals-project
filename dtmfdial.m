@@ -18,11 +18,11 @@ for i=1:(length(keyNames))
      tt=start:dt:dur;
     sil=floor(0.05/dt);
     vzero=zeros(1,sil);
-    signal1=cos(2*pi*dtmf.rowTones(ii)*tt);
-    signal2=cos(2*pi*dtmf.colTones(jj)*tt);
-    sumsignal=signal1+signal2;
+    %signal1=cos(2*pi*dtmf.rowTones(ii)*tt);
+    %signal2=cos(2*pi*dtmf.colTones(jj)*tt);
+    sumsignal=cos(2*pi*dtmf.rowTones(ii,jj)*tt)+cos(2*pi*dtmf.colTones(ii,jj)*tt);
     
-    xx=[xx,sumsignal,vzero];
+    xx=[xx,vzero,sumsignal];
     start=start+dur+0.05;
     
     dur=start+0.2;
